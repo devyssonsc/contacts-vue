@@ -44,12 +44,19 @@ import { useRouter } from 'vue-router';
     </BaseModalView>
     </div>
     <div class="flex flex-col gap-4">
-      <ContactListItemView v-for="contact in contactsStore.contacts"
-      :key="contact.id"
-      :name="contact.name"
-      :phoneNumber="contact.phoneNumber"
-      @click="createCallToContact(contact.id)"
-      />
+      <div
+      class="flex w-full gap-2"
+        v-for="contact in contactsStore.contacts"
+        :key="contact.id"
+      >
+        <ContactListItemView
+        :name="contact.name"
+        :phoneNumber="contact.phoneNumber"
+        :contryCode="contact.countryCode"
+        @click="createCallToContact(contact.id)"
+        />
+        <button class="btn btn-danger" @click="contactsStore.deleteContact(contact.id)">Delete</button>
+      </div>
     </div>
   </div>
 </template>
