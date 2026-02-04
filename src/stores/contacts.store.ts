@@ -28,7 +28,8 @@ export const useContactsStore = defineStore("contacts", {
     }
   },
   actions: {
-    createContact(id: number, name: string, phoneNumber: string) {
+    createContact(name: string, phoneNumber: string) {
+      const id = this.getGreatterContactId() + 1;
       this.contacts.push({ id, name, phoneNumber });
     },
 
@@ -36,6 +37,12 @@ export const useContactsStore = defineStore("contacts", {
       this.contacts = this.contacts.filter(
         (contact) => contact.id !== id
       );
+    },
+    getGreatterContactId(): number {
+      if (this.contacts.length === 0) {
+        return 0;
+      }
+      return Math.max(...this.contacts.map(contact => contact.id));
     }
   }
 })
