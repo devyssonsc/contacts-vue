@@ -8,5 +8,7 @@
 </script>
 
 <template>
-  <RouterLink :to="to">{{ label }}</RouterLink>
+  <div class="p-2 rounded-md bg-zinc-800 hover:bg-zinc-700">
+    <RouterLink :to="to">{{ label }}</RouterLink>
+  </div>
 </template>

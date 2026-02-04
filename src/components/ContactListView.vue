@@ -10,9 +10,9 @@ import ContactListItemView from './ContactListItemView.vue';
   <TitleView title="Contact List" subtitle="Details of all contacts" />
   <div class="flex flex-col gap-4">
     <ContactListItemView v-for="contact in contactsStore.contacts"
-    :key="contact.number"
-    :number="contact.number"
+    :key="contact.id"
     :name="contact.name"
+    :phoneNumber="contact.phoneNumber"
     />
   </div>
 </template>
