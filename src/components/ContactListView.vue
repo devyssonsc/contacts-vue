@@ -43,7 +43,9 @@ import { useRouter } from 'vue-router';
         <AddContactForm @submit="closeModal" />
     </BaseModalView>
     </div>
-    <div class="flex flex-col gap-4">
+    <div
+      class="flex flex-col gap-4"
+      v-if="contactsStore.contacts.length > 0">
       <div
       class="flex w-full gap-2"
         v-for="contact in contactsStore.contacts"
@@ -57,6 +59,9 @@ import { useRouter } from 'vue-router';
         />
         <button class="btn btn-danger" @click="contactsStore.deleteContact(contact.id)">Delete</button>
       </div>
+    </div>
+    <div v-else>
+      No contacts found.
     </div>
   </div>
 </template>

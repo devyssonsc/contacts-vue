@@ -28,7 +28,7 @@ body {
     @apply w-2;
   }
   .custom-scrollbar::-webkit-scrollbar-track {
-    @apply bg-zinc-600 rounded-r;
+    @apply bg-zinc-600 rounded-r-sm;
   }
   .custom-scrollbar::-webkit-scrollbar-thumb {
     @apply bg-zinc-500 rounded;

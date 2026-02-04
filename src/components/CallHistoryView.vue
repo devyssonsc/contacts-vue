@@ -12,7 +12,8 @@ import CallItemView from './CallItemView.vue';
 <template>
   <div class="flex flex-col">
     <TitleView title="Call History" subtitle="Recent calls" />
-    <div class="flex flex-col gap-2 mt-4">
+    <div class="flex flex-col gap-2 mt-4"
+        v-if="callsStore.calls.length > 0">
         <CallItemView
           v-for="call in callsStore.calls"
           :key="call.id"
@@ -20,6 +21,9 @@ import CallItemView from './CallItemView.vue';
           :timestamp="callsStore.getCallTimestamp(call.id)"
           :callStatus="callsStore.getCallStatus(call.id, userId)"
         />
+    </div>
+    <div v-else>
+      No contacts found.
     </div>
   </div>
 </template>

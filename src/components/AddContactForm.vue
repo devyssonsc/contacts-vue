@@ -75,6 +75,7 @@
           @focus="isTouched = true"
           class="w-full p-2 rounded bg-zinc-700 ml-2"
           placeholder="Número de telefone"
+          required
         />
       </div>
 
