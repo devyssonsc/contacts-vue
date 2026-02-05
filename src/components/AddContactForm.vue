@@ -58,8 +58,6 @@
       required
     />
 
-    <!-- <vue-tel-input v-model="phoneNumber" mode="international" required></vue-tel-input> -->
-
     <div class="space-y-2">
       <div class="flex justify-start items-center">
         <div :class="`relative h-full bg-zinc-700 rounded hover:bg-zinc-${openOptions ? 600 : 700} cursor-pointer`" @click="openOptions = !openOptions">
