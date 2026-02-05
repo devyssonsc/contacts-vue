@@ -23,7 +23,7 @@ import CallItemView from './CallItemView.vue';
         />
     </div>
     <div v-else>
-      No contacts found.
+      No calls found.
     </div>
   </div>
 </template>

@@ -51,13 +51,12 @@ import { useRouter } from 'vue-router';
         v-for="contact in contactsStore.contacts"
         :key="contact.id"
       >
+        <button class="btn btn-danger" @click="contactsStore.deleteContact(contact.id)">Delete</button>
         <ContactListItemView
         :name="contact.name"
-        :phoneNumber="contact.phoneNumber"
-        :contryCode="contact.countryCode"
+        :phoneE164="contact.phoneE164"
         @click="createCallToContact(contact.id)"
         />
-        <button class="btn btn-danger" @click="contactsStore.deleteContact(contact.id)">Delete</button>
       </div>
     </div>
     <div v-else>

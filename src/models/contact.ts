@@ -1,6 +1,5 @@
 export interface Contact {
   id: number;
   name: string;
-  phoneNumber: string;
-  countryCode: string
+  phoneE164: string;
 }

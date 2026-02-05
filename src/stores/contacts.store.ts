@@ -8,20 +8,17 @@ export const useContactsStore = defineStore("contacts", {
       {
         id: 1,
         name: "John Doe",
-        phoneNumber: "123-456-7890",
-        countryCode: "US"
+        phoneE164: "+14155552671"
       },
       {
         id: 2,
         name: "Jane Smith",
-        phoneNumber: "987-654-3210",
-        countryCode: "US"
+        phoneE164: "+13239876543"
       },
       {
         id: 3,
         name: "Alice Johnson",
-        phoneNumber: "555-123-4567",
-        countryCode: "US"
+        phoneE164: "+13125550199"
       }
     ])
   }),
@@ -31,9 +28,9 @@ export const useContactsStore = defineStore("contacts", {
     }
   },
   actions: {
-    createContact(name: string, phoneNumber: string, countryCode: string) {
+    createContact(name: string, phoneE164: string) {
       const id = this.getGreatterContactId() + 1;
-      this.contacts.push({ id, name, phoneNumber, countryCode });
+      this.contacts.push({ id, name, phoneE164 });
     },
 
     deleteContact(id: number) {

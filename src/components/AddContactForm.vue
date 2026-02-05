@@ -12,7 +12,7 @@
 
   const name = ref('');
   const phoneNumber = ref('');
-  const phoneE164 = ref<string | undefined>(undefined);
+  const phoneE164 = ref<string>("");
 
   const openOptions = ref(false);
 
@@ -29,12 +29,16 @@
     phoneNumber.value = formatted || phoneNumber.value
 
     const phone = parsePhoneNumberFromString(phoneNumber.value, country.value)
-    phoneE164.value = phone?.format('E.164')
+
+    if(phone?.isValid()) {
+      phoneE164.value = phone?.format('E.164')
+    }
+
     isValid.value = phone?.isValid() ?? false
   })
 
   function submit() {
-    contactsStore.createContact(name.value, phoneNumber.value, country.value);
+    contactsStore.createContact(name.value, phoneE164.value);
     emit('submit');
   }
 

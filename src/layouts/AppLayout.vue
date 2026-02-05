@@ -1,12 +1,11 @@
 <script setup lang="ts">
-    import MenuView from '@/components/MenuView.vue';
+    import HeaderView from '@/components/HeaderView.vue';
+import MenuView from '@/components/MenuView.vue';
 </script>
 
 <template>
   <div class="flex flex-col min-h-screen">
-    <header class="border-b border-zinc-500 h-16 p-4">
-      Header
-    </header>
+    <HeaderView />
     <div class="flex">
       <aside class="w-64 p-4 border-r border-zinc-500 h-[calc(100vh-4rem)]">
         <MenuView />
