@@ -2,15 +2,17 @@ import ContactListView from "@/components/ContactListView.vue";
 import CallHistoryView from "@/components/CallHistoryView.vue";
 import AppLayout from "@/layouts/AppLayout.vue";
 import type { RouteRecordRaw } from "vue-router";
+import AuthLayout from "@/layouts/AuthLayout.vue";
 
 export const routes:RouteRecordRaw[] = [
   {
     path: "/",
     component: AppLayout,
+    meta: { requiresAuth: true },
     children: [
       {
         path: "",
-        redirect: "contact-list"
+        redirect: "contact-list",
       },
       {
         name: "ContactList",
@@ -23,5 +25,10 @@ export const routes:RouteRecordRaw[] = [
         component: CallHistoryView
       }
     ]
+  },
+  {
+    name: "Auth",
+    path: "/auth",
+    component: AuthLayout
   }
 ]
